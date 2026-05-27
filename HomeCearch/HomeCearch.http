@@ -1,6 +1,0 @@
-@HomeCearch_HostAddress = http://localhost:5139
-
-GET {{HomeCearch_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
