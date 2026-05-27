@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>HomeSearch - История</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header_inner">
+                <div class="header_logo">
+                    <div class="header_logo_txt">HomeSearch</div>
+                </div> 
+                <nav class="nav">
+                    <a class="header_btn" href="catalog.html">каталог</a>
+                    <a class="header_btn" href="foloving.html">избранное</a>
+                    <a class="header_btn" href="sell.html">сдать жильё</a>
+                    <a class="header_btn" href="buy.html">история</a>
+                    <a class="header_btn" href="svyz.html">отклики</a>
+                </nav> 
+                <div class="profile_info">
+                    <div class="logo_profil">
+                        <img src="img/user-avatar.png" alt="Аватар">
+                    </div>         
+                    <div class="profil_name">
+                        Иван Иванов
+                    </div>
+                    <div class="profile_menu">
+                        <a href="profile.html">Профиль</a>
+                        <a href="#" id="logout">Выйти</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="history_container">
+        <div class="container">
+            <h1 class="head">
+                История аренды
+            </h1>
+
+            <h2 class="sup_title">
+                Здесь представлена ваша история съёма жилья и контакты арендодателей
+            </h2>
+
+            <!-- Фильтры и поиск -->
+            <div class="search_filters_container">
+                <div class="search_main">
+                    <div class="search_input_wrapper">
+                        <input type="text" class="search_input" id="search_input" 
+                               placeholder="Поиск по городу, адресу или имени владельца...">
+                        <button class="search_btn">
+                            <img src="img/lupa.png" alt="Поиск">
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Фильтры истории -->
+                <div class="history_filters">
+                    <div class="filter_group">
+                        <label>Статус:</label>
+                        <select class="status_filter">
+                            <option value="all">Все бронирования</option>
+                            <option value="completed">Завершённые</option>
+                            <option value="upcoming">Предстоящие</option>
+                            <option value="cancelled">Отменённые</option>
+                        </select>
+                    </div>
+                    <div class="filter_group">
+                        <label>Сортировка:</label>
+                        <select class="sort_filter">
+                            <option value="new">Сначала новые</option>
+                            <option value="old">Сначала старые</option>
+                            <option value="price_high">По убыванию цены</option>
+                            <option value="price_low">По возрастанию цены</option>
+                        </select>
+                    </div>
+                    <button class="apply_filters_btn">Применить</button>
+                    <button class="reset_filters_btn">Сбросить</button>
+                </div>
+            </div>
+
+            <!-- Сетка истории аренды -->
+            <div class="history_grid" id="historyGrid">
+                <div class="history_item">
+                    <div class="history_main_card">
+                        <div class="history_status status_completed">
+                            <span class="status_icon">✅</span> Завершено
+                        </div>
+                        
+                        <div class="history_images">
+                            <img src="img/apartment-1.jpg" alt="Апартаменты в центре">
+                        </div>
+                        
+                        <div class="history_info">
+                            <div class="history_header">
+                                <h3 class="history_title">Уютные апартаменты в центре Москвы</h3>
+                                <div class="history_rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="rating_num">4.9</span>
+                                </div>
+                            </div>
+                            
+                            <div class="history_location">
+                                <span class="location_icon">📍</span> Москва, ул. Тверская, д. 10
+                            </div>
+                            
+                            <div class="history_dates">
+                                <div class="date_item">
+                                    <span class="date_label">Заезд:</span>
+                                    <span class="date_value">15.12.2024</span>
+                                </div>
+                                <div class="date_item">
+                                    <span class="date_label">Выезд:</span>
+                                    <span class="date_value">20.12.2024</span>
+                                </div>
+                                <div class="date_item">
+                                    <span class="date_label">Всего:</span>
+                                    <span class="date_value">5 ночей</span>
+                                </div>
+                            </div>
+                            
+                            <div class="history_features">
+                                <span class="feature">👥 2 гостя</span>
+                                <span class="feature">🛏️ 1 спальня</span>
+                                <span class="feature">🚿 1 ванная</span>
+                                <span class="feature">📶 Wi-Fi</span>
+                                <span class="feature">❄️ Кондиционер</span>
+                            </div>
+                            
+                            <div class="history_payment">
+                                <div class="payment_total">
+                                    <span class="total_label">Итого оплачено:</span>
+                                    <span class="total_amount">15 000 ₽</span>
+                                </div>
+                                <div class="payment_details">
+                                    <span class="detail_item">3 000 ₽ × 5 ночей</span>
+                                    <span class="detail_item">+ 500 ₽ уборка</span>
+                                </div>
+                            </div>
+                            
+                            <div class="history_actions">
+                                <button class="history_btn review_btn">
+                                    <span class="btn_icon">⭐</span> Оставить отзыв
+                                </button>
+                                <button class="history_btn repeat_btn">
+                                    <span class="btn_icon">🔄</span> Забронировать снова
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Карточка арендодателя -->
+                    <div class="owner_card">
+                        <div class="owner_header">
+                            <div class="owner_avatar">
+                                <img src="img/owner-avatar.jpg" alt="Владелец">
+                            </div>
+                            <div class="owner_info">
+                                <h4 class="owner_name">Мария Соколова</h4>
+                                <p class="owner_status">Владелец апартаментов</p>
+                            </div>
+                        </div>
+                        
+                        <div class="owner_contact">
+                            <div class="contact_item">
+                                <span class="contact_icon">📞</span>
+                                <div class="contact_info">
+                                    <span class="contact_label">Телефон для связи:</span>
+                                    <a href="tel:+79991234567" class="contact_value">+7 (999) 123-45-67</a>
+                                </div>
+                            </div>
+                            <div class="contact_item">
+                                <span class="contact_icon">✉️</span>
+                                <div class="contact_info">
+                                    <span class="contact_label">Email:</span>
+                                    <a href="mailto:maria@example.com" class="contact_value">maria@example.com</a>
+                                </div>
+                            </div>
+                            <div class="contact_item">
+                                <span class="contact_icon">💬</span>
+                                <div class="contact_info">
+                                    <span class="contact_label">Telegram:</span>
+                                    <a href="https://t.me/maria_sokolova" class="contact_value">@maria_sokolova</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact_note">
+                            <p>Контактные данные предоставлены для связи по вопросам проживания.</p>
+                        </div>
+                        
+                        <div class="owner_actions">
+                            <button class="contact_btn call_btn">
+                                <span class="btn_icon">📞</span> Позвонить
+                            </button>
+                            <button class="contact_btn message_btn">
+                                <span class="btn_icon">💬</span> Написать
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Карточка истории 2 -->
+                <div class="history_item">
+                    <div class="history_main_card">
+                        <div class="history_status status_upcoming">
+                            <span class="status_icon">📅</span> Предстоящее
+                        </div>
+                        
+                        <div class="history_images">
+                            <img src="img/cottage-1.jpg" alt="Коттедж у озера">
+                        </div>
+                        
+                        <div class="history_info">
+                            <div class="history_header">
+                                <h3 class="history_title">Коттедж у озера в Подмосковье</h3>
+                                <div class="history_rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="rating_num">4.5</span>
+                                </div>
+                            </div>
+                            
+                            <div class="history_location">
+                                <span class="location_icon">📍</span> Подмосковье, озеро Сенеж
+                            </div>
+                            
+                            <div class="history_dates">
+                                <div class="date_item">
+                                    <span class="date_label">Заезд:</span>
+                                    <span class="date_value">10.01.2025</span>
+                                </div>
+                                <div class="date_item">
+                                    <span class="date_label">Выезд:</span>
+                                    <span class="date_value">17.01.2025</span>
+                                </div>
+                                <div class="date_item">
+                                    <span class="date_label">Всего:</span>
+                                    <span class="date_value">7 ночей</span>
+                                </div>
+                            </div>
+                            
+                            <div class="history_features">
+                                <span class="feature">👥 4 гостя</span>
+                                <span class="feature">🛏️ 2 спальни</span>
+                                <span class="feature">🚿 2 ванные</span>
+                                <span class="feature">🏊 Бассейн</span>
+                                <span class="feature">🅿️ Парковка</span>
+                            </div>
+                            
+                            <div class="history_payment">
+                                <div class="payment_total">
+                                    <span class="total_label">К оплате:</span>
+                                    <span class="total_amount">28 000 ₽</span>
+                                </div>
+                                <div class="payment_details">
+                                    <span class="detail_item">4 000 ₽ × 7 ночей</span>
+                                    <span class="detail_item">+ 2 000 ₽ уборка</span>
+                                </div>
+                            </div>
+                            
+                            <div class="history_actions">
+                                <button class="history_btn details_btn">
+                                    <span class="btn_icon">📋</span> Детали брони
+                                </button>
+                                <button class="history_btn cancel_btn">
+                                    <span class="btn_icon">❌</span> Отменить
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Карточка арендодателя 2 -->
+                    <div class="owner_card">
+                        <div class="owner_header">
+                            <div class="owner_avatar">
+                                <img src="img/owner-avatar2.jpg" alt="Владелец">
+                            </div>
+                            <div class="owner_info">
+                                <h4 class="owner_name">Алексей Петров</h4>
+                                <p class="owner_status">Владелец коттеджа</p>
+                            </div>
+                        </div>
+                        
+                        <div class="owner_contact">
+                            <div class="contact_item">
+                                <span class="contact_icon">📞</span>
+                                <div class="contact_info">
+                                    <span class="contact_label">Телефон для связи:</span>
+                                    <a href="tel:+79997654321" class="contact_value">+7 (999) 765-43-21</a>
+                                </div>
+                            </div>
+                            <div class="contact_item">
+                                <span class="contact_icon">✉️</span>
+                                <div class="contact_info">
+                                    <span class="contact_label">Email:</span>
+                                    <a href="mailto:alex@example.com" class="contact_value">alex@example.com</a>
+                                </div>
+                            </div>
+                            <div class="contact_item">
+                                <span class="contact_icon">💬</span>
+                                <div class="contact_info">
+                                    <span class="contact_label">WhatsApp:</span>
+                                    <a href="https://wa.me/79997654321" class="contact_value">+7 (999) 765-43-21</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact_note">
+                            <p>Рекомендуем связаться за 3 дня до заезда для подтверждения времени.</p>
+                        </div>
+                        
+                        <div class="owner_actions">
+                            <button class="contact_btn call_btn">
+                                <span class="btn_icon">📞</span> Позвонить
+                            </button>
+                            <button class="contact_btn message_btn">
+                                <span class="btn_icon">💬</span> Написать
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Если история пуста -->
+            <div class="no_history" id="noHistoryMessage" style="display: none;">
+                <div class="no_history_icon">📋</div>
+                <h3>У вас пока нет истории аренды</h3>
+                <p>После бронирования жилья здесь появятся ваши аренды и контакты владельцев</p>
+                <a href="catalog.html" class="catalog_btn">Перейти к каталогу</a>
+            </div>
+
+            <!-- Пагинация -->
+            <div class="pagination">
+                <button class="pagination_btn prev" disabled>← Назад</button>
+                <div class="pagination_pages">
+                    <button class="page_btn active">1</button>
+                    <button class="page_btn">2</button>
+                    <button class="page_btn">3</button>
+                    <span class="page_dots">...</span>
+                    <button class="page_btn">8</button>
+                </div>
+                <button class="pagination_btn next">Вперёд →</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="history.js"></script>
+</body>
+</html>

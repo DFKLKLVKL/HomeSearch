@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "lAEfUl9xCpA=",
+  "success": false,
+  "projectFilePath": "C:\\Users\\User\\OneDrive\\Документы\\Новая папка\\OneDrive\\Рабочий стол\\WProject\\PROGECT _C#\\homesearch\\HomeCearch\\HomeCearch.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://api.nuget.org/v3/index.json.\r\n  Этот хост неизвестен. (api.nuget.org:443)\r\n  Этот хост неизвестен.",
+      "projectPath": "C:\\Users\\User\\OneDrive\\Документы\\Новая папка\\OneDrive\\Рабочий стол\\WProject\\PROGECT _C#\\homesearch\\HomeCearch\\HomeCearch.csproj",
+      "filePath": "C:\\Users\\User\\OneDrive\\Документы\\Новая папка\\OneDrive\\Рабочий стол\\WProject\\PROGECT _C#\\homesearch\\HomeCearch\\HomeCearch.csproj",
+      "targetGraphs": []
+    }
+  ]
+}
