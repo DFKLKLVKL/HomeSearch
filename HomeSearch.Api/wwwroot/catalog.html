@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeSearch - каталог</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header_inner">
+                <div class="header_logo">
+                    <div class="header_logo_txt">HomeSearch</div>
+                </div> 
+                <nav class="nav">
+                    <a class="header_btn" href="catalog.html">каталог</a>
+                    <a class="header_btn" href="foloving.html">избранное</a>
+                    <a class="header_btn" href="sell.html">сдать жильё</a>
+                    <a class="header_btn" href="buy.html">история</a>
+                    <a class="header_btn" href="svyz.html">отклики</a>
+                </nav> 
+                <div class="profile_info">
+                    <div class="logo_profil">
+                        <img src="img/user-avatar.png" alt="Аватар">
+                    </div>         
+                    <div class="profil_name">
+                        Иван Иванов
+                    </div>
+                    <div class="profile_menu">
+                        <a href="buy.html">Профиль</a>
+                        <a href="#" id="logout">Выйти</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="catalog_container">
+        <div class="container">
+            <div class="catalog_header">
+                <h1 class="catalog_title">Найдите идеальное жильё для отдыха</h1>
+                <p class="catalog_subtitle">Более 10,000 вариантов по всей России и за рубежом</p>
+            </div>
+
+            <!-- Поиск и фильтры -->
+            <div class="search_filters_container">
+                <!-- Основной поиск -->
+                <div class="search_main">
+                    <div class="search_input_wrapper">
+                        <input type="text" class="search_input" id="search_input" placeholder="Куда вы хотите поехать?">
+                        <button class="search_btn">
+                            <img src="img/lupa.png" alt="Поиск">
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Расширенные фильтры -->
+                <div class="filters_container">
+                    <div class="filter_section">
+                        <h3 class="filter_title">Фильтры</h3>
+                        
+                        <div class="filter_group">
+                            <label class="filter_label">Даты</label>
+                            <div class="date_inputs">
+                                <input type="date" class="date_input" id="checkin_date" placeholder="Заезд">
+                                <input type="date" class="date_input" id="checkout_date" placeholder="Выезд">
+                            </div>
+                        </div>
+
+                        <div class="filter_group">
+                            <label class="filter_label">Гости</label>
+                            <div class="guests_selector">
+                                <button class="guest_btn minus">-</button>
+                                <span class="guest_count">2</span>
+                                <button class="guest_btn plus">+</button>
+                                <span class="guest_text">гостя</span>
+                            </div>
+                        </div>
+
+                        <div class="filter_group">
+                            <label class="filter_label">Тип жилья</label>
+                            <div class="type_buttons">
+                                <button class="type_btn active" data-type="all">Все</button>
+                                <button class="type_btn" data-type="apartment">Квартиры</button>
+                                <button class="type_btn" data-type="house">Дома</button>
+                                <button class="type_btn" data-type="hotel">Отели</button>
+                                <button class="type_btn" data-type="cottage">Коттеджи</button>
+                            </div>
+                        </div>
+
+                        <div class="filter_group">
+                            <label class="filter_label">Цена, ₽</label>
+                            <div class="price_slider">
+                                <input type="range" class="price_range" id="price_min" min="0" max="50000" value="1000">
+                                <input type="range" class="price_range" id="price_max" min="0" max="50000" value="20000">
+                                <div class="price_values">
+                                    <span id="min_price">1 000 ₽</span>
+                                    <span id="max_price">20 000 ₽</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="filter_group">
+                            <label class="filter_label">Удобства</label>
+                            <div class="amenities">
+                                <label class="amenity_checkbox">
+                                    <input type="checkbox" name="wifi" checked>
+                                    <span>Wi-Fi</span>
+                                </label>
+                                <label class="amenity_checkbox">
+                                    <input type="checkbox" name="parking" checked>
+                                    <span>Парковка</span>
+                                </label>
+                                <label class="amenity_checkbox">
+                                    <input type="checkbox" name="kitchen">
+                                    <span>Кухня</span>
+                                </label>
+                                <label class="amenity_checkbox">
+                                    <input type="checkbox" name="pool">
+                                    <span>Бассейн</span>
+                                </label>
+                                <label class="amenity_checkbox">
+                                    <input type="checkbox" name="ac">
+                                    <span>Кондиционер</span>
+                                </label>
+                            </div>
+                        </div>
+
+                       
+                        <div class="filter_group rating_filter">
+                            <label class="filter_label">Рейтинг</label>
+                            <div class="rating_buttons">
+                                <button class="rating_btn active" data-rating="0">Все</button>
+                                <button class="rating_btn" data-rating="4.5">
+                                    <span class="stars">★★★★★</span> 4.5+
+                                </button>
+                                <button class="rating_btn" data-rating="4.0">
+                                    <span class="stars">★★★★☆</span> 4.0+
+                                </button>
+                                <button class="rating_btn" data-rating="3.5">
+                                    <span class="stars">★★★☆☆</span> 3.5+
+                                </button>
+                                <button class="rating_btn" data-rating="3.0">
+                                    <span class="stars">★★★☆☆</span> 3.0+
+                                </button>
+                            </div>
+                        </div>
+
+                        <button class="apply_filters_btn">Применить фильтры</button>
+                        <button class="reset_filters_btn">Сбросить все</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Сортировка и количество -->
+            <div class="sorting_container">
+                <div class="results_count">
+                    Найдено: <span id="total_results">124</span> вариантов
+                </div>
+                <div class="sort_by">
+                    <label>Сортировать:</label>
+                    <select class="sort_select">
+                        <option value="popular">По популярности</option>
+                        <option value="price_low">Сначала дешёвые</option>
+                        <option value="price_high">Сначала дорогие</option>
+                        <option value="rating">По рейтингу</option>
+                        <option value="new">Сначала новые</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Сетка товаров -->
+            <div class="products_grid" id="products_grid">
+                <!-- Товары будут загружаться здесь -->
+            </div>
+
+            <!-- Пагинация -->
+            <div class="pagination">
+                <button class="pagination_btn prev" disabled>← Назад</button>
+                <div class="pagination_pages">
+                    <button class="page_btn active">1</button>
+                    <button class="page_btn">2</button>
+                    <button class="page_btn">3</button>
+                    <span class="page_dots">...</span>
+                    <button class="page_btn">8</button>
+                </div>
+                <button class="pagination_btn next">Вперёд →</button>
+            </div>
+
+            <!-- Быстрый просмотр -->
+            <div class="quick_view_container" id="quick_view">
+                <div class="quick_view_content">
+                    <button class="close_quick_view">×</button>
+                    <div class="quick_view_images">
+                        <img src="" alt="" id="quick_view_img">
+                    </div>
+                    <div class="quick_view_info">
+                        <h3 id="quick_view_title"></h3>
+                        <div class="quick_view_price" id="quick_view_price"></div>
+                        <div class="quick_view_desc" id="quick_view_desc"></div>
+                        <button class="book_now_btn">Забронировать</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Корзина в правом нижнем углу -->
+    <a class="buy_btn" href="buy.html">
+        <img src="img/basket.png" alt="Корзина">
+        <span class="cart_count">3</span>
+    </a>
+
+    <!-- Подгрузка товаров -->
+    <script src="catalog.js"></script>
+</body>
+</html>

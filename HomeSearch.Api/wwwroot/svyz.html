@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>HomeSearch - отклики</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header_inner">
+                <div class="header_logo">
+                    <div class="header_logo_txt">HomeSearch</div>
+                </div> 
+                <nav class="nav">
+                    <a class="header_btn" href="catalog.html">каталог</a>
+                    <a class="header_btn" href="foloving.html">избранное</a>
+                    <a class="header_btn" href="sell.html">сдать жильё</a>
+                    <a class="header_btn" href="buy.html">история</a>
+                    <a class="header_btn active" href="svyz.html">отклики</a>
+                </nav> 
+                <div class="profile_info">
+                    <div class="logo_profil">
+                        <img src="img/user-avatar.png" alt="Аватар">
+                    </div>         
+                    <div class="profil_name">
+                        Иван Иванов
+                    </div>
+                    <div class="profile_menu">
+                        <a href="buy.html">Профиль</a>
+                        <a href="#" id="logout">Выйти</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="svyz_container">
+        <div class="container">
+            <h1 class="head">
+                отклики по карточкам
+            </h1>
+            
+            <!-- Счетчик статусов -->
+            <div class="status_counter">
+                <div class="counter_item pending">
+                    <span class="counter_number" id="pendingCount">0</span>
+                    <span class="counter_label">Ожидание</span>
+                </div>
+                <div class="counter_item approved">
+                    <span class="counter_number" id="approvedCount">0</span>
+                    <span class="counter_label">Согласовано</span>
+                </div>
+                <div class="counter_item rejected">
+                    <span class="counter_number" id="rejectedCount">0</span>
+                    <span class="counter_label">Отказано</span>
+                </div>
+            </div>
+
+            <!-- Фильтры -->
+            <div class="filter_group">
+                <label class="filter_label">Тип откликов</label>
+                <div class="type_buttons">
+                    <button class="type_btn active" data-type="all">мои отклики</button>
+                    <button class="type_btn" data-type="apartment">отклики по сдаче</button>
+                </div>
+            </div>
+
+            <!-- Отклики покупателя -->
+            <div class="zayavki_container active" id="buyerResponses">
+                <!-- Карточки будут добавлены через JavaScript -->
+            </div>
+
+            <!-- Отклики продавца -->
+            <div class="otklyki_container" id="sellerResponses">
+                <!-- Карточки будут добавлены через JavaScript -->
+            </div>
+
+            <!-- Пагинация -->
+            <div class="pagination_svyz">
+                <button id="prevBtn" disabled>← Назад</button>
+                <div class="page_numbers" id="pageNumbers"></div>
+                <button id="nextBtn">Вперёд →</button>
+            </div>
+        </div>
+    </main>
+
+    
+
+    <script src="svyz.js"></script>
+</body>
+</html>

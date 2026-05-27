@@ -1,0 +1,6 @@
+@HomeSearch.Api_HostAddress = http://localhost:5178
+
+GET {{HomeSearch.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
